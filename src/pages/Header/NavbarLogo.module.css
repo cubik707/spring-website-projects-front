@@ -1,0 +1,20 @@
+.navbar-logo {
+    padding: 8px 12px;
+}
+
+.navbar-logo > a {
+    cursor: pointer;
+}
+
+.logo {
+    width: 300px;
+}
+
+.logo .st3 {
+    fill: #fff;
+}
+
+.logo .st0,
+.logo .st1 {
+    fill: #6cb52d;
+}

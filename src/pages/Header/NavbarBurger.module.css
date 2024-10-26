@@ -1,0 +1,52 @@
+.navbar-burger {
+    display: none;
+    height: 100%;
+}
+
+.navbar-burger:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.hamburger {
+    cursor: pointer;
+    height: 48px;
+    position: relative;
+    transition: 0.4s cubic-bezier(0, 0, 0, 1);
+    user-select: none;
+    width: 48px;
+    outline: none;
+    transform: none;
+}
+
+.hamburger > div:first-child {
+    background: currentcolor;
+    height: 2px;
+    left: 12px;
+    position: absolute;
+    width: 24px;
+    top: 16px;
+    transition: 0.4s cubic-bezier(0, 0, 0, 1);
+    transform: none;
+}
+
+.hamburger > div:nth-child(2) {
+    background: currentcolor;
+    height: 2px;
+    left: 12px;
+    position: absolute;
+    width: 24px;
+    top: 23px;
+    transition: 0.4s cubic-bezier(0, 0, 0, 1);
+    transform: none;
+}
+
+.hamburger > div:nth-child(3) {
+    background: currentcolor;
+    height: 2px;
+    left: 12px;
+    position: absolute;
+    width: 24px;
+    top: 30px;
+    transition: 0.4s cubic-bezier(0, 0, 0, 1);
+    transform: none;
+}

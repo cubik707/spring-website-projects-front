@@ -1,0 +1,11 @@
+.header {
+    padding: 5px 0;
+    z-index: 1000;
+    border-bottom: 1px solid #d9e9e9;
+}
+
+.header-wrapper-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
