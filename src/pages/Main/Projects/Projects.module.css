@@ -1,15 +1,15 @@
-.projects-section {
+.projectsSection {
     margin: 3rem 0;
 }
 
-.projects-section .title {
+.title {
     font-family: Metropolis, sans-serif;
     font-size: 3.5rem;
     margin-top: 40px;
     padding: 16px 0;
 }
 
-.description-wrapper {
+.descriptionWrapper {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -17,9 +17,18 @@
     max-width: 960px;
 }
 
-.description-wrapper .description {
+.description {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 2.2rem;
 }
 
+.button{
+    align-self: flex-start;
+}
+
+@media screen and (max-width: 1344px) {
+    .projectsSection {
+        padding: 0 32px;
+    }
+}

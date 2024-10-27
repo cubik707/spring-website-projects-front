@@ -1,6 +1,6 @@
 import ProjectList from './ProjectList';
 
-export const ProjectsList = (props) => {
+export const ProjectsListSection = (props) => {
   return (
     <section>
       <div className='projects-list-section'>

@@ -1,16 +1,14 @@
 import styles from './Button.module.css';
 
-function Button({ children, onClick, href }) {
-  if (href) {
-    return (
-      <a href={href} className={styles.button} onClick={onClick}>
-        {children}
-      </a>
-    );
-  }
+function Button({ children, onClick, href, className }) {
+  const buttonClass = `${styles.button} ${className || ''}`;
 
-  return (
-    <button type='button' className={styles.button} onClick={onClick}>
+  return href ? (
+    <a href={href} className={buttonClass} onClick={onClick}>
+      {children}
+    </a>
+  ) : (
+    <button type='button' className={buttonClass} onClick={onClick}>
       {children}
     </button>
   );
