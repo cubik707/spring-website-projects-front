@@ -1,4 +1,4 @@
-import { ProjectList } from '../../components/ProjectList/ProjectList';
+import ProjectList from './ProjectList';
 
 export const ProjectsList = (props) => {
   return (
