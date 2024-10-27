@@ -1,8 +1,10 @@
+import styles from './NavbarBurger.module.css';
+
 export const NavbarBurger = (props) => {
   return (
-    <div className='navbar-burger'>
+    <div className={styles.navbarBurger}>
       <div
-        className='hamburger'
+        className={styles.hamburger}
         aria-expanded='false'
         role='button'
         tabIndex='0'

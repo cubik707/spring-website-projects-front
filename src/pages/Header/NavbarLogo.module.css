@@ -1,8 +1,8 @@
-.navbar-logo {
+.navbarLogo {
     padding: 8px 12px;
 }
 
-.navbar-logo > a {
+.navbarLogo > a {
     cursor: pointer;
 }
 

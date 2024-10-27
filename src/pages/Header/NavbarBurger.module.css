@@ -1,9 +1,9 @@
-.navbar-burger {
+.navbarBurger {
     display: none;
     height: 100%;
 }
 
-.navbar-burger:hover {
+.navbarBurger:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 

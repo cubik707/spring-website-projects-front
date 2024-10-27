@@ -1,17 +1,19 @@
-function Button ({ children, onClick, type = 'button', href }) {
+import styles from './Button.module.css';
+
+function Button({ children, onClick, href }) {
   if (href) {
     return (
-      <a href={href} className='button' onClick={onClick}>
+      <a href={href} className={styles.button} onClick={onClick}>
         {children}
       </a>
     );
   }
 
   return (
-    <button type={type} className='button' onClick={onClick}>
+    <button type='button' className={styles.button} onClick={onClick}>
       {children}
     </button>
   );
-};
+}
 
 export default Button;

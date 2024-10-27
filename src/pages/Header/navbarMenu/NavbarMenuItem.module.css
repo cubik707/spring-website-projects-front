@@ -1,0 +1,35 @@
+.navbarMenu li {
+    cursor: unset;
+    font-size: 0.95rem;
+}
+
+.navbarListItem {
+    position: relative;
+    display: flex;
+}
+
+.navbarLink {
+    font-family: Metropolis, sans-serif;
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 0.5rem 0.75rem;
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.navbarLink:after {
+    content: ' ';
+    position: absolute;
+    left: 88%;
+    display: block;
+    transform: translateY(-50%) rotate(-45deg);
+    margin-left: 0.5rem;
+    transform-origin: center;
+    border-bottom: 2px solid #111;
+    border-left: 2px solid #111;
+    border-radius: 1px;
+    height: 0.5rem;
+    width: 0.5rem;
+}

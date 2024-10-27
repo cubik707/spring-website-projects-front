@@ -4,7 +4,7 @@
     border-bottom: 1px solid #d9e9e9;
 }
 
-.header-wrapper-desktop {
+.headerWrapperDesktop {
     display: flex;
     justify-content: space-between;
     align-items: center;

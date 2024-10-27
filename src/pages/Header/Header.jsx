@@ -1,17 +1,21 @@
+import styles from './Header.module.css';
 import { NavbarLogo } from './NavbarLogo';
-import { NavbarMenu } from './NavbarMenu';
+import { NavbarMenu } from './navbarMenu/NavbarMenu';
 import { NavbarBurger } from './NavbarBurger';
+import navbarMenuItems from './navbarMenu/navbarMenuItems';
 
-export const Header = (props) => {
+function Header(props) {
   return (
-    <header className='header'>
+    <header className={styles.header}>
       <div className='container'>
-        <div className='header-wrapper-desktop'>
+        <div className={styles.headerWrapperDesktop}>
           <NavbarLogo />
-          <NavbarMenu />
+          <NavbarMenu navbarMenuItems={navbarMenuItems} />
           <NavbarBurger />
         </div>
       </div>
     </header>
   );
-};
+}
+
+export default Header;
