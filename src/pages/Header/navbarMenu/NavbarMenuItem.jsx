@@ -10,23 +10,14 @@ const NavbarMenuItem = ({ item }) => {
     setDropdownOpen(!isDropdownOpen);
   };
 
-  const handleMouseEnter = () => {
-    setDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    setDropdownOpen(false);
-  };
-
-  // const titleClass = classNames(styles.navbarLink, { ['arrowUp']: isDropdownOpen });
-
   return (
-    <li
-      className={styles.navbarListItem}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <span className={styles.navbarLink} onClick={toggleDropdown}>
+    <li className={styles.navbarListItem}>
+      <span
+        className={classNames(styles.navbarLink, {
+          [styles.arrowUp]: isDropdownOpen,
+        })}
+        onClick={toggleDropdown}
+      >
         {item.title}
       </span>
       <NavbarDropdown dropdownItems={item.dropdown} isOpen={isDropdownOpen} />

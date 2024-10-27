@@ -1,3 +1,5 @@
+@import url(./NavbarMenuItem.module.css);
+
 .navbarDropdown {
     position: absolute;
     background: #ffffff;
@@ -52,4 +54,46 @@
     visibility: visible; /* The element becomes visible */
     opacity: 1; /* Fades in smoothly */
     display: block;
+}
+
+@media screen and (max-width: 1024px) {
+    .navbarListItem:hover .navbarDropdown {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .navbarDropdown.active {
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .navbarDropdown.active li {
+        padding: 0;
+    }
+
+    .navbarDropdown.active a {
+        color: #98afae;
+        font-size: 1.2rem;
+        padding: 0.2rem 0;
+        display: block;
+    }
+
+    .navbarDropdown.active a:hover,
+    .navbarDropdown.active .devTools:hover {
+        color: #6cb52d;
+    }
+
+    .navbarDropdown.active .devTools {
+        color: #98afae;
+        font-size: 1.2rem;
+        padding: .2rem 0;
+    }
+
+    .navbarDropdown.active svg {
+        display: none;
+    }
 }

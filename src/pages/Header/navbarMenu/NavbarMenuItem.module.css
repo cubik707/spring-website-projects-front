@@ -33,3 +33,48 @@
     height: 0.5rem;
     width: 0.5rem;
 }
+
+@media screen and (max-width: 1024px) {
+    .open .navbarListItem {
+        position: static;
+        display: block;
+    }
+
+    .open .navbarLink {
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        border-bottom: 1px solid hsla(0, 0%, 100%, 0.4);
+        display: block;
+        height: 60px;
+        margin: 1rem 0;
+        font-size: 2rem;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: normal;
+        line-height: normal;
+        padding: 0;
+    }
+
+    .open .navbarLink:hover {
+        color: #6cb52d;
+    }
+
+    .open .navbarLink::after {
+        border: solid #98afae;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg) translate(-5px, 5px) scale(1);
+        content: ' ';
+        display: block;
+        height: 15px;
+        position: absolute;
+        right: 5px;
+        top: 20px;
+        transition: transform 0.2s ease-out;
+        width: 15px;
+        left: unset;
+    }
+
+    .navbarLink.arrowUp::after {
+        transform: rotate(45deg) translate(5px, 15px) scale(-1);
+    }
+}

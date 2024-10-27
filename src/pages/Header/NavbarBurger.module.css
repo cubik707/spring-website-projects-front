@@ -50,3 +50,38 @@
     transition: 0.4s cubic-bezier(0, 0, 0, 1);
     transform: none;
 }
+
+@media screen and (max-width: 1024px) {
+    .navbarBurger {
+        display: block;
+        z-index: 999;
+    }
+
+    .navbarBurger:hover {
+        background-color: rgba(1, 1, 1, 0.05);
+    }
+
+    .hamburgerOpen {
+        top: 0;
+        right: 0;
+        position: fixed;
+    }
+
+    .hamburgerOpen > div:first-child {
+        top: 23px;
+        transform: rotate(45deg);
+    }
+
+    .hamburgerOpen > div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburgerOpen > div:nth-child(3) {
+        top: 23px;
+        transform: rotate(-45deg);
+    }
+
+    .hamburgerOpen > div {
+        background: white;
+    }
+}
