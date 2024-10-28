@@ -34,8 +34,8 @@ const navbarMenuItems = [
       { text: 'Spring Batch', link: '#' },
       { text: 'Spring Security', link: '#' },
       { text: 'Spring AI', link: '#' },
-      { text: 'View all projects', link: '#', class: 'view-all-proj' },
-      { text: 'DEVELOPMENT TOOLS', link: null, class: 'dev-tools' },
+      { text: 'View all projects', link: '#', class: 'viewAllProj' },
+      { text: 'DEVELOPMENT TOOLS', link: null, class: 'devTools' },
       { text: 'Spring Tools 4', link: '#' },
       {
         text: 'Spring Initializr',

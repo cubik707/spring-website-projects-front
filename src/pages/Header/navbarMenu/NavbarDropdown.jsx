@@ -12,11 +12,18 @@ const NavbarDropdown = ({ dropdownItems, isOpen }) => {
       {dropdownItems.map((dropdownItem, index) => (
         <li key={index} className={styles.navbarListItem}>
           {dropdownItem.link ? (
-            <a href={dropdownItem.link} className={dropdownItem.class || ''}>
+            <a
+              href={dropdownItem.link}
+              className={classNames(styles.navbarDropdownLink, {
+                [styles.viewAllProj]: dropdownItem.class === 'viewAllProj',
+              })}
+            >
               {dropdownItem.text}
             </a>
           ) : (
-            <div className={dropdownItem.class || ''}>{dropdownItem.text}</div>
+            <div className={styles[dropdownItem.class]}>
+              {dropdownItem.text}
+            </div>
           )}
         </li>
       ))}

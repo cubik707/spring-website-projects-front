@@ -1,99 +1,99 @@
 @import url(./NavbarMenuItem.module.css);
 
 .navbarDropdown {
-    position: absolute;
-    background: #ffffff;
-    border: 0;
-    box-shadow: 0 5px 30px 0 rgba(108, 135, 135, 0.5);
-    font-family:
-            Open Sans,
-            sans-serif;
-    font-size: 1rem;
-    padding: 1rem;
-    border-radius: 6px;
-    top: 100%; /* Places the dropdown menu directly below the link */
-    left: 0;
-    visibility: hidden; /* Initially, the element is hidden */
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    z-index: 20;
+  position: absolute;
+  background: #ffffff;
+  border: 0;
+  box-shadow: 0 5px 30px 0 rgba(108, 135, 135, 0.5);
+  font-family:
+    Open Sans,
+    sans-serif;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  top: 100%; /* Places the dropdown menu directly below the link */
+  left: 0;
+  visibility: hidden; /* Initially, the element is hidden */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 20;
 }
 
-.navbarDropdown li {
-    white-space: nowrap;
-    padding: 0.375rem 1rem;
+.navbarListItem {
+  white-space: nowrap;
+  padding: 0.375rem 1rem;
 }
 
-.navbarDropdown a {
-    padding-right: 3rem;
-    color: #111;
+.navbarDropdownLink {
+  padding-right: 3rem;
+  color: #111;
 }
 
-.navbarDropdown a:hover,
-.navbarDropdown a.viewAllProj:hover {
-    color: #6db33f;
+.navbarDropdownLink:hover,
+.navbarDropdownLink.viewAllProj:hover {
+  color: #6db33f;
 }
 
-.navbarDropdown a.viewAllProj {
-    display: block;
-    color: #086dc3;
-    margin-bottom: 24px;
+.navbarDropdownLink.viewAllProj {
+  display: block;
+  color: #086dc3;
+  margin-bottom: 24px;
 }
 
 .devTools {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
-.navbarDropdown svg {
-    margin-left: 0.5rem;
-    height: 1em;
-    vertical-align: -0.125em;
+.navbarDropdownSvg {
+  margin-left: 0.5rem;
+  height: 1em;
+  vertical-align: -0.125em;
 }
 
-.navbarListItem:hover .navbarDropdown {
-    visibility: visible; /* The element becomes visible */
-    opacity: 1; /* Fades in smoothly */
-    display: block;
+.active {
+  visibility: visible; /* The element becomes visible */
+  opacity: 1; /* Fades in smoothly */
+  display: block;
 }
 
 @media screen and (max-width: 1024px) {
-    .navbarListItem:hover .navbarDropdown {
-        visibility: hidden;
-        opacity: 0;
-    }
+  .navbarListItem:hover .navbarDropdown {
+    visibility: hidden;
+    opacity: 0;
+  }
 
-    .navbarDropdown.active {
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: static;
-        background-color: transparent;
-        box-shadow: none;
-        padding: 0;
-    }
+  .navbarDropdown.active {
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
 
-    .navbarDropdown.active li {
-        padding: 0;
-    }
+  .navbarDropdown.active li {
+    padding: 0;
+  }
 
-    .navbarDropdown.active a {
-        color: #98afae;
-        font-size: 1.2rem;
-        padding: 0.2rem 0;
-        display: block;
-    }
+  .navbarDropdown.active a {
+    color: #98afae;
+    font-size: 1.2rem;
+    padding: 0.2rem 0;
+    display: block;
+  }
 
-    .navbarDropdown.active a:hover,
-    .navbarDropdown.active .devTools:hover {
-        color: #6cb52d;
-    }
+  .navbarDropdown.active a:hover,
+  .navbarDropdown.active .devTools:hover {
+    color: #6cb52d;
+  }
 
-    .navbarDropdown.active .devTools {
-        color: #98afae;
-        font-size: 1.2rem;
-        padding: .2rem 0;
-    }
+  .navbarDropdown.active .devTools {
+    color: #98afae;
+    font-size: 1.2rem;
+    padding: 0.2rem 0;
+  }
 
-    .navbarDropdown.active svg {
-        display: none;
-    }
+  .navbarDropdown.active svg {
+    display: none;
+  }
 }

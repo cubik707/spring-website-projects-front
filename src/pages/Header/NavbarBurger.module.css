@@ -1,87 +1,87 @@
 .navbarBurger {
-    display: none;
-    height: 100%;
+  display: none;
+  height: 100%;
 }
 
 .navbarBurger:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .hamburger {
-    cursor: pointer;
-    height: 48px;
-    position: relative;
-    transition: 0.4s cubic-bezier(0, 0, 0, 1);
-    user-select: none;
-    width: 48px;
-    outline: none;
-    transform: none;
+  cursor: pointer;
+  height: 48px;
+  position: relative;
+  transition: 0.4s cubic-bezier(0, 0, 0, 1);
+  user-select: none;
+  width: 48px;
+  outline: none;
+  transform: none;
 }
 
 .hamburger > div:first-child {
-    background: currentcolor;
-    height: 2px;
-    left: 12px;
-    position: absolute;
-    width: 24px;
-    top: 16px;
-    transition: 0.4s cubic-bezier(0, 0, 0, 1);
-    transform: none;
+  background: currentcolor;
+  height: 2px;
+  left: 12px;
+  position: absolute;
+  width: 24px;
+  top: 16px;
+  transition: 0.4s cubic-bezier(0, 0, 0, 1);
+  transform: none;
 }
 
 .hamburger > div:nth-child(2) {
-    background: currentcolor;
-    height: 2px;
-    left: 12px;
-    position: absolute;
-    width: 24px;
-    top: 23px;
-    transition: 0.4s cubic-bezier(0, 0, 0, 1);
-    transform: none;
+  background: currentcolor;
+  height: 2px;
+  left: 12px;
+  position: absolute;
+  width: 24px;
+  top: 23px;
+  transition: 0.4s cubic-bezier(0, 0, 0, 1);
+  transform: none;
 }
 
 .hamburger > div:nth-child(3) {
-    background: currentcolor;
-    height: 2px;
-    left: 12px;
-    position: absolute;
-    width: 24px;
-    top: 30px;
-    transition: 0.4s cubic-bezier(0, 0, 0, 1);
-    transform: none;
+  background: currentcolor;
+  height: 2px;
+  left: 12px;
+  position: absolute;
+  width: 24px;
+  top: 30px;
+  transition: 0.4s cubic-bezier(0, 0, 0, 1);
+  transform: none;
 }
 
 @media screen and (max-width: 1024px) {
-    .navbarBurger {
-        display: block;
-        z-index: 999;
-    }
+  .navbarBurger {
+    display: block;
+    z-index: 999;
+  }
 
-    .navbarBurger:hover {
-        background-color: rgba(1, 1, 1, 0.05);
-    }
+  .navbarBurger:hover {
+    background-color: rgba(1, 1, 1, 0.05);
+  }
 
-    .hamburgerOpen {
-        top: 0;
-        right: 0;
-        position: fixed;
-    }
+  .hamburgerOpen {
+    top: 0;
+    right: 0;
+    position: fixed;
+  }
 
-    .hamburgerOpen > div:first-child {
-        top: 23px;
-        transform: rotate(45deg);
-    }
+  .hamburgerOpen > div:first-child {
+    top: 23px;
+    transform: rotate(45deg);
+  }
 
-    .hamburgerOpen > div:nth-child(2) {
-        opacity: 0;
-    }
+  .hamburgerOpen > div:nth-child(2) {
+    opacity: 0;
+  }
 
-    .hamburgerOpen > div:nth-child(3) {
-        top: 23px;
-        transform: rotate(-45deg);
-    }
+  .hamburgerOpen > div:nth-child(3) {
+    top: 23px;
+    transform: rotate(-45deg);
+  }
 
-    .hamburgerOpen > div {
-        background: white;
-    }
+  .hamburgerOpen > div {
+    background: white;
+  }
 }

@@ -6,17 +6,19 @@ import classNames from 'classnames';
 const NavbarMenuItem = ({ item }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
-  };
+  const handleMouseEnter = () => setDropdownOpen(true);
+  const handleMouseLeave = () => setDropdownOpen(false);
 
   return (
-    <li className={styles.navbarListItem}>
+    <li
+      className={styles.navbarListItem}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <span
         className={classNames(styles.navbarLink, {
           [styles.arrowUp]: isDropdownOpen,
         })}
-        onClick={toggleDropdown}
       >
         {item.title}
       </span>
