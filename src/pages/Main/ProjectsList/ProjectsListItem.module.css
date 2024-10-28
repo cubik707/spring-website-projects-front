@@ -53,3 +53,14 @@
     padding-top: 0.75rem;
 }
 
+@media screen and (max-width: 768px) {
+    .project {
+        width: 100%;
+    }
+
+    .projectItem {
+        width: 150px;
+        height: 150px;
+    }
+}
+
