@@ -3,22 +3,43 @@ import React, { useState } from 'react';
 import NavbarDropdown from './NavbarDropdown';
 import classNames from 'classnames';
 
-const NavbarMenuItem = ({ item }) => {
+const NavbarMenuItem = ({ item, isMobileOpen, onDropdownToggle }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  const handleMouseEnter = () => setDropdownOpen(true);
-  const handleMouseLeave = () => setDropdownOpen(false);
+  const handleMouseEnter = () => {
+    if (!isMobileOpen) {
+      setDropdownOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobileOpen) {
+      setDropdownOpen(false);
+    }
+  };
+
+  const toggleDropdown = () => {
+    if (isMobileOpen) {
+      const newDropdownState = !isDropdownOpen;
+      setDropdownOpen(newDropdownState);
+      onDropdownToggle(newDropdownState);
+    }
+  };
 
   return (
     <li
-      className={styles.navbarListItem}
+      className={classNames(styles.navbarListItem, {
+        [styles.open]: isMobileOpen,
+      })}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <span
         className={classNames(styles.navbarLink, {
           [styles.arrowUp]: isDropdownOpen,
+          [styles.open]: isMobileOpen,
         })}
+        onClick={toggleDropdown}
       >
         {item.title}
       </span>

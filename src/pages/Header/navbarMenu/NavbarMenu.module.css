@@ -47,4 +47,8 @@
   .navbarMenu {
     display: block;
   }
+
+  .navbarMenuWrapper.scrollable {
+    overflow-y: auto;
+  }
 }

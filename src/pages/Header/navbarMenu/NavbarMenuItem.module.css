@@ -32,12 +32,12 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .open .navbarListItem {
+  .open.navbarListItem {
     position: static;
     display: block;
   }
 
-  .open .navbarLink {
+  .open.navbarLink {
     color: #fff;
     cursor: pointer;
     position: relative;
@@ -50,25 +50,25 @@
     font-weight: normal;
     line-height: normal;
     padding: 0;
-  }
 
-  .open .navbarLink:hover {
-    color: #6cb52d;
-  }
+    &:hover {
+      color: #6cb52d;
+    }
 
-  .open .navbarLink::after {
-    border: solid #98afae;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg) translate(-5px, 5px) scale(1);
-    content: ' ';
-    display: block;
-    height: 15px;
-    position: absolute;
-    right: 5px;
-    top: 20px;
-    transition: transform 0.2s ease-out;
-    width: 15px;
-    left: unset;
+    &::after {
+      border: solid #98afae;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg) translate(-5px, 5px) scale(1);
+      content: ' ';
+      display: block;
+      height: 15px;
+      position: absolute;
+      right: 5px;
+      top: 20px;
+      transition: transform 0.2s ease-out;
+      width: 15px;
+      left: unset;
+    }
   }
 
   .navbarLink.arrowUp::after {
