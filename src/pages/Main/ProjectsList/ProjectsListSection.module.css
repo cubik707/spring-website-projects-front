@@ -1,11 +1,11 @@
-.projects-list-section {
+.projectsListSection {
     padding-bottom: 3rem;
     padding-top: 3rem;
     background-color: #ebf2f2;
     min-height: 300px;
 }
 
-.projects-list-section-wrapper {
+.projectsListSectionWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;

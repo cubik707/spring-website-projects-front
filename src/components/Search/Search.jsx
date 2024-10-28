@@ -1,16 +1,23 @@
-export const Search = (props) => {
+import styles from './Search.module.css';
+
+export default function Search(props) {
   return (
-    <div className='search'>
-      <span className='search-icon material-symbols-outlined'>search</span>
+    <div className={styles.search}>
+      <span className={`${styles.searchIcon} material-symbols-outlined`}>
+        search
+      </span>
       <input
-        className='search-input'
+        className={styles.searchInput}
         type='search'
         id='search-input-projects'
         placeholder='Search'
       />
-      <span className='clear-icon material-symbols-outlined' id='clear-search'>
+      <span
+        className={`${styles.clearIcon} material-symbols-outlined`}
+        id='clear-search'
+      >
         clear
       </span>
     </div>
   );
-};
+}

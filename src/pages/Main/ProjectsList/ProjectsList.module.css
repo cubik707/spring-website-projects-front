@@ -1,0 +1,6 @@
+.projectsList {
+    margin: 0 auto;
+    max-width: 82.5%;
+    display: flex;
+    flex-wrap: wrap;
+}

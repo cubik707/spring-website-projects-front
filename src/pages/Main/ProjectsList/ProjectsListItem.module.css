@@ -1,0 +1,55 @@
+.project {
+    width: 50%;
+    padding: 12px;
+}
+
+.project:only-child {
+    width: 100%;
+}
+
+.projectItem {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+
+    color: #111;
+
+    border: 1px solid #d9e9e9;
+    border-radius: 5px;
+    padding: 30px 20px;
+    background-color: white;
+
+    position: relative;
+    transition: all 0.3s ease;
+
+    overflow: hidden;
+}
+
+.projectItem:hover {
+    box-shadow: 0 10px 20px 0 rgba(108, 135, 135, 0.2);
+    text-decoration: none;
+    top: -3px;
+    transform: translateY(-3px);
+}
+
+.projectImg {
+    flex: 1 1;
+    min-width: 120px;
+    text-align: center;
+    height: 120px;
+    max-width: 120px;
+}
+
+.projectInfo {
+    flex: 3 1;
+}
+
+.projectInfoDescription {
+    line-height: 1.7rem;
+    padding-bottom: 0.75rem;
+    padding-top: 0.75rem;
+}
+
