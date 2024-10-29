@@ -5,8 +5,6 @@ import springCloud from '../../../assets/spring-cloud.svg';
 import springDataFlow from '../../../assets/spring-data-flow.svg';
 import springSecurity from '../../../assets/spring-security.svg';
 
-export const DEFAULT_LINK = '#';
-
 const projectsData = [
   {
     title: 'Spring Boot',

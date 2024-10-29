@@ -1,5 +1,3 @@
-export const DEFAULT_LINK = '#';
-
 const navbarMenuItems = [
   {
     title: 'Why Spring',
