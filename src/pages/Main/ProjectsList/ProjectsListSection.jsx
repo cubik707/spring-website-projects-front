@@ -19,12 +19,13 @@ export const ProjectsListSection = (props) => {
 
     setFilteredProjects(filtered);
   };
+
   return (
     <section>
       <div className={styles.projectsListSection}>
         <div className='container'>
           <div className={styles.projectsListSectionWrapper}>
-            <Search onSearchChange={handleSearchChange} />
+            <Search value={searchValue} onSearchChange={handleSearchChange} />
             <ProjectsList projectsData={filteredProjects} />
           </div>
         </div>

@@ -1,17 +1,11 @@
 import styles from './Search.module.css';
-import { useState } from 'react';
 
-export default function Search({ onSearchChange }) {
-  const [searchValue, setSearchValue] = useState('');
-
+export default function Search({ value, onSearchChange }) {
   const handleInputChange = (event) => {
-    const value = event.target.value;
-    setSearchValue(value);
-    onSearchChange(value);
+    onSearchChange(event.target.value);
   };
 
   const handleClear = () => {
-    setSearchValue('');
     onSearchChange('');
   };
 
@@ -23,9 +17,8 @@ export default function Search({ onSearchChange }) {
       <input
         className={styles.searchInput}
         type='search'
-        id='search-input-projects'
         placeholder='Search'
-        value={searchValue}
+        value={value}
         onChange={handleInputChange}
       />
       <span
