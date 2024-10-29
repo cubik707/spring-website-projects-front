@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './NavbarDropdown.module.css';
 import classNames from 'classnames';
-import { DEFAULT_LINK } from './navbarMenuItems';
+import { DEFAULT_LINK } from '../navbarMenuItems';
 
 const NavbarDropdown = ({ dropdownItems, isOpen }) => {
   const dropdownClass = classNames(styles.navbarDropdown, {

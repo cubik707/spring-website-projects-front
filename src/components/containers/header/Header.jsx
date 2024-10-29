@@ -1,8 +1,8 @@
 import styles from './Header.module.css';
-import NavbarLogo from './NavbarLogo';
-import NavbarMenu from './navbarMenu/NavbarMenu';
-import NavbarBurger from './NavbarBurger';
-import navbarMenuItems from './navbarMenu/navbarMenuItems';
+import NavbarLogo from './navbar/navbar-logo/NavbarLogo';
+import NavbarMenu from './navbar/navbar-menu/NavbarMenu';
+import NavbarBurger from './navbar/navbar-burger/NavbarBurger';
+import navbarMenuItems from './navbar/navbarMenuItems';
 import { useState } from 'react';
 
 function Header() {

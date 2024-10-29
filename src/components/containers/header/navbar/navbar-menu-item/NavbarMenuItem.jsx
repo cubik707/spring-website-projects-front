@@ -1,6 +1,6 @@
 import styles from './NavbarMenuItem.module.css';
 import React, { useState } from 'react';
-import NavbarDropdown from './NavbarDropdown';
+import NavbarDropdown from '../navbar-dropdown/NavbarDropdown';
 import classNames from 'classnames';
 
 const NavbarMenuItem = ({ item, isMobileOpen, onDropdownToggle }) => {

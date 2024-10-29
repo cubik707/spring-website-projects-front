@@ -1,5 +1,5 @@
 import styles from './NavbarMenu.module.css';
-import NavbarMenuItem from './NavbarMenuItem';
+import NavbarMenuItem from '../navbar-menu-item/NavbarMenuItem';
 import classNames from 'classnames';
 import { useState } from 'react';
 
