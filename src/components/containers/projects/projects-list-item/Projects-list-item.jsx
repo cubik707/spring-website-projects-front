@@ -1,4 +1,4 @@
-import styles from './ProjectsListItem.module.css';
+import styles from './Projects-list-item.module.css';
 
 export default function ProjectListItem({ title, description, link, image }) {
   return (

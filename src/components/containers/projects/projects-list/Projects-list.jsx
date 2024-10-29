@@ -1,6 +1,6 @@
-import styles from './ProjectsList.module.css';
-import ProjectListItem from '../projects-list-item/ProjectsListItem';
-import { DEFAULT_LINK } from '../projectsData';
+import styles from './Projects-list.module.css';
+import ProjectListItem from '../projects-list-item/Projects-list-item';
+import { DEFAULT_LINK } from '../projects-data';
 
 export default function ProjectsList({ projectsData }) {
   return (

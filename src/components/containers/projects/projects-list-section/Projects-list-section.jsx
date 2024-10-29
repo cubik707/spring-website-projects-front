@@ -1,6 +1,6 @@
-import styles from './ProjectsListSection.module.css';
-import ProjectsList from '../projects-list/ProjectsList.jsx';
-import projectsData from '../projectsData.js';
+import styles from './Projects-list-section.module.css';
+import ProjectsList from '../projects-list/Projects-list.jsx';
+import projectsData from '../projects-data.js';
 import Search from '../../../core/Search/Search.jsx';
 import { useState } from 'react';
 

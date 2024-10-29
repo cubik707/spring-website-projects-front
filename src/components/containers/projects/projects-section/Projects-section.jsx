@@ -1,4 +1,4 @@
-import styles from './ProjectsSection.module.css';
+import styles from './Projects-section.module.css';
 import Button from '../../../core/Button/Button';
 
 export default function ProjectsSection() {
