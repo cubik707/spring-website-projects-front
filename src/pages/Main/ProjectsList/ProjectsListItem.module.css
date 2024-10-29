@@ -53,12 +53,30 @@
     padding-top: 0.75rem;
 }
 
+@media screen and (max-width: 1024px) {
+    .projectItem {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+    }
+
+    .projectInfo {
+        text-align: left;
+    }
+
+    .projectImg {
+        margin: 0 auto;
+        height: 100px;
+        width: 100px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .project {
         width: 100%;
     }
 
-    .projectItem {
+    .projectImg {
         width: 150px;
         height: 150px;
     }
