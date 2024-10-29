@@ -1,5 +1,6 @@
 import styles from './ProjectsList.module.css';
 import ProjectListItem from './ProjectsListItem';
+import { DEFAULT_LINK } from './projectsData';
 
 export default function ProjectsList({ projectsData }) {
   return (
@@ -9,7 +10,7 @@ export default function ProjectsList({ projectsData }) {
           key={index}
           title={project.title}
           description={project.description}
-          link={project.link}
+          link={project.link || DEFAULT_LINK}
           image={project.image}
         />
       ))}

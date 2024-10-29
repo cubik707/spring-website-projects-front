@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './NavbarDropdown.module.css';
 import classNames from 'classnames';
+import { DEFAULT_LINK } from './navbarMenuItems';
 
 const NavbarDropdown = ({ dropdownItems, isOpen }) => {
   const dropdownClass = classNames(styles.navbarDropdown, {
@@ -11,9 +12,9 @@ const NavbarDropdown = ({ dropdownItems, isOpen }) => {
     <ul className={dropdownClass}>
       {dropdownItems.map((dropdownItem, index) => (
         <li key={index} className={styles.navbarListItem}>
-          {dropdownItem.link ? (
+          {dropdownItem.link !== null ? (
             <a
-              href={dropdownItem.link}
+              href={dropdownItem.link || DEFAULT_LINK}
               className={classNames(styles.navbarDropdownLink, {
                 [styles.viewAllProj]: dropdownItem.class === 'viewAllProj',
               })}
