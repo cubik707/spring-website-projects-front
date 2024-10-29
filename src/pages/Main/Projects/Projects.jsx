@@ -1,7 +1,7 @@
 import styles from './Projects.module.css';
 import Button from '../../../components/Button/Button';
 
-export const Projects = () => {
+export default function Projects() {
   return (
     <section>
       <div className='container'>
@@ -22,4 +22,4 @@ export const Projects = () => {
       </div>
     </section>
   );
-};
+}

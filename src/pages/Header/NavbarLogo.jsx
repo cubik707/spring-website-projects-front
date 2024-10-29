@@ -1,6 +1,6 @@
 import styles from './NavbarLogo.module.css';
 
-export const NavbarLogo = () => {
+export default function NavbarLogo() {
   return (
     <div className={styles.navbarLogo}>
       <a href='#'>
@@ -120,4 +120,4 @@ export const NavbarLogo = () => {
       </a>
     </div>
   );
-};
+}

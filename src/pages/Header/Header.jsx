@@ -1,11 +1,11 @@
 import styles from './Header.module.css';
-import { NavbarLogo } from './NavbarLogo';
-import { NavbarMenu } from './navbarMenu/NavbarMenu';
-import { NavbarBurger } from './NavbarBurger';
+import NavbarLogo from './NavbarLogo';
+import NavbarMenu from './navbarMenu/NavbarMenu';
+import NavbarBurger from './NavbarBurger';
 import navbarMenuItems from './navbarMenu/navbarMenuItems';
 import { useState } from 'react';
 
-function Header(props) {
+function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMenu = () => {

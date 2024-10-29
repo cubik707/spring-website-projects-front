@@ -1,7 +1,7 @@
 import styles from './NavbarBurger.module.css';
 import classNames from 'classnames';
 
-export const NavbarBurger = ({ isMobileOpen, toggleMenu }) => {
+export default function NavbarBurger({ isMobileOpen, toggleMenu }) {
   return (
     <div className={styles.navbarBurger}>
       <div
@@ -19,4 +19,4 @@ export const NavbarBurger = ({ isMobileOpen, toggleMenu }) => {
       </div>
     </div>
   );
-};
+}

@@ -3,7 +3,7 @@ import NavbarMenuItem from './NavbarMenuItem';
 import classNames from 'classnames';
 import { useState } from 'react';
 
-export const NavbarMenu = ({ navbarMenuItems, isMobileOpen }) => {
+export default function NavbarMenu({ navbarMenuItems, isMobileOpen }) {
   const [isAnyDropdownOpen, setIsAnyDropdownOpen] = useState(false);
 
   const handleDropdownToggle = (isOpen) => {
@@ -31,4 +31,4 @@ export const NavbarMenu = ({ navbarMenuItems, isMobileOpen }) => {
       </nav>
     </div>
   );
-};
+}

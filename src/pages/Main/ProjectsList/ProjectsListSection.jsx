@@ -4,7 +4,7 @@ import projectsData from './projectsData.js';
 import Search from '../../../components/Search/Search.jsx';
 import { useState } from 'react';
 
-export const ProjectsListSection = (props) => {
+export default function ProjectsListSection() {
   const [searchValue, setSearchValue] = useState('');
   const [filteredProjects, setFilteredProjects] = useState(projectsData);
 
@@ -32,4 +32,4 @@ export const ProjectsListSection = (props) => {
       </div>
     </section>
   );
-};
+}

@@ -1,7 +1,7 @@
 import styles from './ProjectsList.module.css';
 import ProjectListItem from './ProjectsListItem';
 
-function ProjectsList({ projectsData }) {
+export default function ProjectsList({ projectsData }) {
   return (
     <div className={styles.projectsList}>
       {projectsData.map((project, index) => (
@@ -16,5 +16,3 @@ function ProjectsList({ projectsData }) {
     </div>
   );
 }
-
-export default ProjectsList;

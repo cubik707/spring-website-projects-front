@@ -1,5 +1,4 @@
 import styles from './ProjectsListItem.module.css';
-import classNames from 'classnames';
 
 export default function ProjectListItem({ title, description, link, image }) {
   return (
