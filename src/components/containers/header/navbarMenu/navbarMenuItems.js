@@ -24,7 +24,7 @@ const navbarMenuItems = [
     ],
   },
   {
-    title: 'Projects',
+    title: 'ProjectsSection',
     dropdown: [
       { text: 'Overview' },
       { text: 'Spring Boot' },

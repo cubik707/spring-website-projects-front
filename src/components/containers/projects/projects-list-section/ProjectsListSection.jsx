@@ -1,7 +1,7 @@
 import styles from './ProjectsListSection.module.css';
-import ProjectsList from './ProjectsList.jsx';
-import projectsData from './projectsData.js';
-import Search from '../../../components/Search/Search.jsx';
+import ProjectsList from '../projects-list/ProjectsList.jsx';
+import projectsData from '../projectsData.js';
+import Search from '../../../core/Search/Search.jsx';
 import { useState } from 'react';
 
 export default function ProjectsListSection() {

@@ -1,7 +1,7 @@
-import styles from './Projects.module.css';
-import Button from '../../../components/Button/Button';
+import styles from './ProjectsSection.module.css';
+import Button from '../../../core/Button/Button';
 
-export default function Projects() {
+export default function ProjectsSection() {
   return (
     <section>
       <div className='container'>

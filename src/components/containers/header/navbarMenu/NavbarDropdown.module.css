@@ -1,4 +1,4 @@
-@import url(./NavbarMenuItem.module.css);
+@import url(NavbarMenuItem.module.css);
 
 .navbarDropdown {
   position: absolute;
