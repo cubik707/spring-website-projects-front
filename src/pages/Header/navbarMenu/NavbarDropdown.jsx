@@ -20,6 +20,11 @@ const NavbarDropdown = ({ dropdownItems, isOpen }) => {
               })}
             >
               {dropdownItem.text}
+              {dropdownItem.icon && (
+                <span className={styles.navbarDropdownSvg}>
+                  {dropdownItem.icon}
+                </span>
+              )}
             </a>
           ) : (
             <div className={styles[dropdownItem.class]}>
