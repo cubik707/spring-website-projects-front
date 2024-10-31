@@ -6,19 +6,16 @@ import { useState } from 'react';
 
 export default function ProjectsListSection() {
   const [searchValue, setSearchValue] = useState('');
-  const [filteredProjects, setFilteredProjects] = useState(projectsData);
 
   const handleSearchChange = (value) => {
     setSearchValue(value);
-
-    const filtered = projectsData.filter(
-      (project) =>
-        project.title.toLowerCase().includes(value.toLowerCase()) ||
-        project.description.toLowerCase().includes(value.toLowerCase()),
-    );
-
-    setFilteredProjects(filtered);
   };
+
+  const filteredProjects = projectsData.filter(
+    (project) =>
+      project.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchValue.toLowerCase()),
+  );
 
   return (
     <section>
@@ -26,7 +23,11 @@ export default function ProjectsListSection() {
         <div className='container'>
           <div className={styles.projectsListSectionWrapper}>
             <Search value={searchValue} onSearchChange={handleSearchChange} />
-            <ProjectsList projectsData={filteredProjects} />
+            {filteredProjects.length > 0 ? (
+              <ProjectsList projectsData={filteredProjects} />
+            ) : (
+              <p>Not found</p>
+            )}
           </div>
         </div>
       </div>
