@@ -20,7 +20,6 @@ export const router = createBrowserRouter([
       <ProtectedRoute>
         <ProjectsPage />
       </ProtectedRoute>
-      // <ProjectsPage />
     ),
   },
   {

@@ -12,7 +12,8 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault(); // Prevents the page from reloading on form submission
     if (username === 'admin' && password === '1234') {
       dispatch(login());
       navigate('/');
@@ -25,7 +26,7 @@ const LoginPage = () => {
     <div className={styles.loginWrapper}>
       <div className={styles.loginCard}>
         <h2 className={styles.title}>Login</h2>
-        <div className={styles.loginForm}>
+        <form className={styles.loginForm} onSubmit={handleLogin}>
           <Input
             placeholder='Username'
             value={username}
@@ -37,8 +38,8 @@ const LoginPage = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button onClick={handleLogin}>Login</Button>
-        </div>
+          <Button type="submit">Login</Button>
+        </form>
       </div>
     </div>
   );
