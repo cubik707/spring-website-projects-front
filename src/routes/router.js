@@ -1,11 +1,13 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import LoginPage from '../pages/login-page';
+import LoginPage from '../pages/login-page/login-page';
 import ProjectsPage from '../pages/projects-page';
 import { useSelector } from 'react-redux';
 
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-
+  if (isAuthenticated === undefined) {
+    return null; // или индикатор загрузки
+  }
   if (!isAuthenticated) {
     return <Navigate to='/login' replace />;
   }
@@ -20,6 +22,7 @@ export const router = createBrowserRouter([
       <ProtectedRoute>
         <ProjectsPage />
       </ProtectedRoute>
+      // <ProjectsPage />
     ),
   },
   {
