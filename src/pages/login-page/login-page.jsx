@@ -3,14 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import Input from '../../components/core/input/input';
 import styles from './login-page.module.css'
 import Button from "../../components/core/Button/Button";
+import { useDispatch } from "react-redux";
+import { login } from "../../state/auth-reducer";
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleLogin = () => {
     if (username === 'admin' && password === '1234') {
+      dispatch(login());
       navigate('/');
     } else {
       alert('Invalid username or password');
