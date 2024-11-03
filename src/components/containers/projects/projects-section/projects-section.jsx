@@ -1,5 +1,5 @@
-import styles from './Projects-section.module.css';
-import Button from '../../../core/Button/Button';
+import styles from './projects-section.module.css';
+import Button from '../../../core/button/button';
 
 export default function ProjectsSection() {
   return (

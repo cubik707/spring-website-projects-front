@@ -1,4 +1,4 @@
-import styles from './Navbar-logo.module.css';
+import styles from './navbar-logo.module.css';
 import { ReactComponent as Logo } from '../../../../../assets/logo.svg';
 
 export default function NavbarLogo() {

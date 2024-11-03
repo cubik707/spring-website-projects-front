@@ -1,4 +1,4 @@
-import styles from './Search.module.css';
+import styles from './search.module.css';
 
 export default function Search({ value, onSearchChange }) {
   const handleInputChange = (event) => {

@@ -1,4 +1,4 @@
-import styles from './input.module.css'
+import styles from './input.module.css';
 
 const Input = ({ type = 'text', placeholder, value, onChange, ...props }) => {
   return (

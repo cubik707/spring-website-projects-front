@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../../components/core/input/input';
-import styles from './login-page.module.css'
-import Button from "../../components/core/Button/Button";
-import { useDispatch } from "react-redux";
-import { login } from "../../state/auth-reducer";
+import styles from './login-page.module.css';
+import Button from '../../components/core/button/button';
+import { useDispatch } from 'react-redux';
+import { login } from '../../state/auth-reducer';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -41,7 +41,6 @@ const LoginPage = () => {
         </div>
       </div>
     </div>
-
   );
 };
 
