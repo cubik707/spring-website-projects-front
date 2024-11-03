@@ -5,9 +5,7 @@ import { useSelector } from 'react-redux';
 
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  if (isAuthenticated === undefined) {
-    return null; // или индикатор загрузки
-  }
+
   if (!isAuthenticated) {
     return <Navigate to='/login' replace />;
   }
