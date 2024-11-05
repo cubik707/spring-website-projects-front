@@ -1,6 +1,6 @@
-import styles from './Button.module.css';
+import styles from './button.module.css';
 
-function Button({ children, onClick, href, className }) {
+function Button({ children, onClick, href, className, type = 'button' }) {
   const buttonClass = `${styles.button} ${className || ''}`;
 
   return href ? (
@@ -8,7 +8,7 @@ function Button({ children, onClick, href, className }) {
       {children}
     </a>
   ) : (
-    <button type='button' className={buttonClass} onClick={onClick}>
+    <button type={type} className={buttonClass} onClick={onClick}>
       {children}
     </button>
   );

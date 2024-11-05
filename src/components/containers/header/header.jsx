@@ -1,7 +1,7 @@
-import styles from './Header.module.css';
-import NavbarLogo from './navbar/navbar-logo/Navbar-logo';
-import NavbarMenu from './navbar/navbar-menu/Navbar-menu';
-import NavbarBurger from './navbar/navbar-burger/Navbar-burger';
+import styles from './header.module.css';
+import NavbarLogo from './navbar/navbar-logo/navbar-logo';
+import NavbarMenu from './navbar/navbar-menu/navbar-menu';
+import NavbarBurger from './navbar/navbar-burger/navbar-burger';
 import navbarMenuItems from './navbar/navbar-menu-items';
 import { useState } from 'react';
 

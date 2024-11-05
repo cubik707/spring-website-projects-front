@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Navbar-dropdown.module.css';
+import styles from './navbar-dropdown.module.css';
 import classNames from 'classnames';
 import { DEFAULT_LINK } from '../../../../../const/constants';
 

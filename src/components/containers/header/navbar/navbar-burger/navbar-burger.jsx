@@ -1,4 +1,4 @@
-import styles from './Navbar-burger.module.css';
+import styles from './navbar-burger.module.css';
 import classNames from 'classnames';
 
 export default function NavbarBurger({ isMobileOpen, toggleMenu }) {
