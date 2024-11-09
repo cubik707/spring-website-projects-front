@@ -1,9 +1,9 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { handleError } from "../../utils/handle-errors";
-import { authAPI } from "../../api/auth-api";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { handleError } from '../../utils/handle-errors';
+import { authAPI } from '../../api/auth-api';
 
 export const login = createAsyncThunk(
-  "auth/login",
+  'auth/login',
   async (userData, { rejectWithValue }) => {
     try {
       await authAPI.login(userData);
@@ -12,17 +12,16 @@ export const login = createAsyncThunk(
       const errorMessage = handleError(error); // Get formatted error message
       return rejectWithValue(errorMessage); // Pass it to rejectWithValue
     }
-  }
+  },
 );
 
 const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState: {
     isAuthenticated: false,
     error: null,
   },
   reducers: {
-
     logout: (state) => {
       state.isAuthenticated = false;
       state.error = null;
