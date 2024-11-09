@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@redux-devtools/extension": "^3.3.0",
+    "@reduxjs/toolkit": "^2.3.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -53,7 +54,6 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "jest": "^27.5.1",
-    "prettier": "^3.3.3",
-    "redux-mock-store": "^1.5.5"
+    "prettier": "^3.3.3"
   }
 }

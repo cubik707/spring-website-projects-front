@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import Input from '../../components/core/input/input';
-import styles from './login-page.module.css';
-import Button from '../../components/core/button/button';
+import { useNavigate } from "react-router-dom";
+import Input from "../../components/core/input/input";
+import styles from "./login-page.module.css";
+import Button from "../../components/core/button/button";
 import { useDispatch, useSelector } from "react-redux";
-import { loginThunk } from "../../state/auth/auth-thunk";
+import { login } from "../../state/auth/auth-slice";
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -17,7 +17,7 @@ const LoginPage = () => {
   const handleLogin = (e) => {
     e.preventDefault(); // Prevents the page from reloading on form submission
     const userData = { username, password };
-    dispatch(loginThunk(userData));
+    dispatch(login(userData));
   };
 
   useEffect(() => {

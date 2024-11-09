@@ -1,12 +1,7 @@
-import { loginError } from "../state/auth/auth-action";
 
-export const handleError = (e, dispatch) => {
-  let errorMessage;
-
+export const handleError = (e) => {
   if (e.response && e.response.data) {
-    errorMessage = e.response.data[0]?.msg ?? e.response.data.message;
-  } else {
-    errorMessage = "An unexpected error occurred";
+    return e.response.data[0]?.msg || e.response.data.message;
   }
-  dispatch(loginError(errorMessage));
+  return "An unexpected error occurred";
 };
