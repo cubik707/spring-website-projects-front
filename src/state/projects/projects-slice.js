@@ -1,9 +1,9 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { handleError } from "../../utils/handle-errors";
-import { projectsAPI } from "../../api/projects-api";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { handleError } from '../../utils/handle-errors';
+import { projectsAPI } from '../../api/projects-api';
 
 export const fetchProjects = createAsyncThunk(
-  "projects/fetchProjects",
+  'projects/fetchProjects',
   async (_, { rejectWithValue }) => {
     try {
       return await projectsAPI.getProjects();
@@ -11,15 +11,15 @@ export const fetchProjects = createAsyncThunk(
       const errorMessage = handleError(error);
       return rejectWithValue(errorMessage);
     }
-  }
+  },
 );
 
 const projectsSlice = createSlice({
-  name: "projects",
+  name: 'projects',
   initialState: {
     projects: [],
     loading: false,
-    error: null
+    error: null,
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -36,7 +36,7 @@ const projectsSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       });
-  }
+  },
 });
 
 export const projectsReducer = projectsSlice.reducer;
