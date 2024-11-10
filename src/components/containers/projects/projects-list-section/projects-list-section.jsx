@@ -1,17 +1,24 @@
 import styles from './projects-list-section.module.css';
 import ProjectsList from '../projects-list/projects-list.jsx';
-import projectsData from '../projects-data.js';
 import Search from '../../../core/search/search.jsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProjects } from '../../../../state/projects/projects-slice';
 
 export default function ProjectsListSection() {
   const [searchValue, setSearchValue] = useState('');
+  const dispatch = useDispatch();
+  const { projects, loading, error } = useSelector((state) => state.projects);
+
+  useEffect(() => {
+    dispatch(fetchProjects());
+  }, []);
 
   const handleSearchChange = (value) => {
     setSearchValue(value);
   };
 
-  const filteredProjects = projectsData.filter(
+  const filteredProjects = (projects || []).filter(
     (project) =>
       project.title.toLowerCase().includes(searchValue.toLowerCase()) ||
       project.description.toLowerCase().includes(searchValue.toLowerCase()),
@@ -23,7 +30,11 @@ export default function ProjectsListSection() {
         <div className='container'>
           <div className={styles.projectsListSectionWrapper}>
             <Search value={searchValue} onSearchChange={handleSearchChange} />
-            {filteredProjects.length > 0 ? (
+            {loading ? (
+              <p>Loading...</p>
+            ) : error ? (
+              <p>Error: {error}</p>
+            ) : filteredProjects.length > 0 ? (
               <ProjectsList projectsData={filteredProjects} />
             ) : (
               <p>Not found</p>
