@@ -12,7 +12,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { error: error, isAuthenticated } = useSelector((state) => state.auth);
+  const { error, isAuthenticated } = useSelector((state) => state.auth);
 
   const handleLogin = (e) => {
     e.preventDefault(); // Prevents the page from reloading on form submission
