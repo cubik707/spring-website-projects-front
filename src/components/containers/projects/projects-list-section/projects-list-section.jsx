@@ -12,7 +12,7 @@ export default function ProjectsListSection() {
 
   useEffect(() => {
     dispatch(fetchProjects());
-  }, []);
+  }, [dispatch]);
 
   const handleSearchChange = (value) => {
     setSearchValue(value);
