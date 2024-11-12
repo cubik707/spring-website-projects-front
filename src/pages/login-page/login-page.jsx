@@ -1,26 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../../components/core/input/input';
 import styles from './login-page.module.css';
 import Button from '../../components/core/button/button';
-import { useDispatch } from 'react-redux';
-import { login } from '../../state/auth-reducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../state/auth/auth-thunk';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleLogin = (e) => {
-    e.preventDefault(); // Prevents the page from reloading on form submission
-    if (username === 'admin' && password === '1234') {
-      dispatch(login());
-      navigate('/');
-    } else {
-      alert('Invalid username or password');
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await dispatch(login({ username, password })).unwrap();
+      setError(null);
+    } catch (error) {
+      setError(error.message || 'Failed to login');
     }
   };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/'); // Redirect to home if the user is authenticated
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
     <div className={styles.loginWrapper}>
@@ -41,6 +50,7 @@ const LoginPage = () => {
           <Button type='submit'>Login</Button>
         </form>
       </div>
+      {error && <div className='errorMessage'>{error}</div>}
     </div>
   );
 };

@@ -42,6 +42,12 @@ body {
   margin: 0 auto;
 }
 
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 1344px) {
   .container {
     padding: 0;
