@@ -16,8 +16,7 @@ const LoginPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault(); // Prevents the page from reloading on form submission
-    const userData = { username, password };
-    dispatch(login(userData));
+    dispatch(login({ username, password }));
   };
 
   useEffect(() => {
