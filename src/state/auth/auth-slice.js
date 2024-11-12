@@ -1,19 +1,5 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { handleError } from '../../utils/handle-errors';
-import { authAPI } from '../../api/auth-api';
-
-export const login = createAsyncThunk(
-  'auth/login',
-  async (userData, { rejectWithValue }) => {
-    try {
-      await authAPI.login(userData);
-      return true; // on success
-    } catch (error) {
-      const errorMessage = handleError(error); // Get formatted error message
-      return rejectWithValue(errorMessage); // Pass it to rejectWithValue
-    }
-  },
-);
+import { createSlice } from '@reduxjs/toolkit';
+import { login } from './auth-thunk';
 
 const authSlice = createSlice({
   name: 'auth',

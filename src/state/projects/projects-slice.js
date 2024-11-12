@@ -1,18 +1,5 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { handleError } from '../../utils/handle-errors';
-import { projectsAPI } from '../../api/projects-api';
-
-export const fetchProjects = createAsyncThunk(
-  'projects/fetchProjects',
-  async (_, { rejectWithValue }) => {
-    try {
-      return await projectsAPI.getProjects();
-    } catch (error) {
-      const errorMessage = handleError(error);
-      return rejectWithValue(errorMessage);
-    }
-  },
-);
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchProjects } from './projects-thunk';
 
 const projectsSlice = createSlice({
   name: 'projects',
