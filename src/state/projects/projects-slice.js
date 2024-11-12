@@ -6,7 +6,6 @@ const projectsSlice = createSlice({
   initialState: {
     projects: [],
     loading: false,
-    error: null,
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -17,11 +16,9 @@ const projectsSlice = createSlice({
       .addCase(fetchProjects.fulfilled, (state, action) => {
         state.loading = false;
         state.projects = action.payload;
-        state.error = null;
       })
-      .addCase(fetchProjects.rejected, (state, action) => {
+      .addCase(fetchProjects.rejected, (state) => {
         state.loading = false;
-        state.error = action.payload;
       });
   },
 });
