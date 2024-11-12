@@ -7,11 +7,21 @@ import { fetchProjects } from '../../../../state/projects/projects-thunk';
 
 export default function ProjectsListSection() {
   const [searchValue, setSearchValue] = useState('');
+  const [error, setError] = useState(null);
   const dispatch = useDispatch();
-  const { projects, loading, error } = useSelector((state) => state.projects);
+  const { projects, loading } = useSelector((state) => state.projects);
 
   useEffect(() => {
-    dispatch(fetchProjects());
+    const fetchData = async () => {
+      try {
+        await dispatch(fetchProjects()).unwrap();
+        setError(null);
+      } catch (err) {
+        setError(err.message || 'Failed to load projects');
+      }
+    };
+
+    fetchData();
   }, [dispatch]);
 
   const handleSearchChange = (value) => {

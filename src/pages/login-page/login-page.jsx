@@ -9,14 +9,20 @@ import { login } from '../../state/auth/auth-thunk';
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { error, isAuthenticated } = useSelector((state) => state.auth);
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
-  const handleLogin = (e) => {
-    e.preventDefault(); // Prevents the page from reloading on form submission
-    dispatch(login({ username, password }));
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await dispatch(login({ username, password })).unwrap();
+      setError(null);
+    } catch (error) {
+      setError(error.message || 'Failed to login');
+    }
   };
 
   useEffect(() => {
