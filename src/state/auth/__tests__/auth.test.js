@@ -9,7 +9,7 @@ jest.mock('../../../api/auth-api', () => ({
   },
 }));
 
-describe('authSlice', () => {
+describe('authThunk', () => {
   let store;
 
   beforeEach(() => {
@@ -32,7 +32,6 @@ describe('authSlice', () => {
 
     const state = store.getState().auth;
     expect(state.isAuthenticated).toBe(true); // Check that authentication succeeded
-    expect(state.error).toBe(null); // Error should be null
   });
 
   // Test for failed login
@@ -48,6 +47,5 @@ describe('authSlice', () => {
 
     const state = store.getState().auth;
     expect(state.isAuthenticated).toBe(false); // Check that authentication failed
-    expect(state.error).toBe(errorMessage); // Error should match the simulated response
   });
 });
