@@ -3,7 +3,7 @@ import ProjectsList from '../projects-list/projects-list.jsx';
 import Search from '../../../core/search/search.jsx';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProjects } from '../../../../state/projects/projects-slice';
+import { fetchProjects } from '../../../../state/projects/projects-thunk';
 
 export default function ProjectsListSection() {
   const [searchValue, setSearchValue] = useState('');

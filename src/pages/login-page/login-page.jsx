@@ -4,7 +4,7 @@ import Input from '../../components/core/input/input';
 import styles from './login-page.module.css';
 import Button from '../../components/core/button/button';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../../state/auth/auth-slice';
+import { login } from '../../state/auth/auth-thunk';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');

@@ -1,6 +1,7 @@
 import { authAPI } from '../../../api/auth-api.js';
-import { authReducer, login } from '../auth-slice';
+import { authReducer } from '../auth-slice';
 import { configureStore } from '@reduxjs/toolkit';
+import { login } from '../auth-thunk';
 
 jest.mock('../../../api/auth-api', () => ({
   authAPI: {
