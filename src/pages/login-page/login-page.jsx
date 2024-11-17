@@ -18,7 +18,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await dispatch(login({ username, password })).unwrap();
+      await dispatch(login({ username, password }));
       setError(null);
     } catch (error) {
       setError(error.message || 'Failed to login');

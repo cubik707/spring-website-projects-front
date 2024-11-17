@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { login } from './auth-thunk';
+import { authTokenManager } from '../../utils/auth-token-manager';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -9,6 +10,7 @@ const authSlice = createSlice({
   reducers: {
     logout: (state) => {
       state.isAuthenticated = false;
+      authTokenManager.removeAccessToken();
     },
   },
   extraReducers: (builder) => {
