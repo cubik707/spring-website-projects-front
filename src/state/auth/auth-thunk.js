@@ -7,7 +7,7 @@ export const login = createAsyncThunk(
   async (userData, { rejectWithValue }) => {
     try {
       const { accessToken } = await authAPI.login(userData);
-      console.log(accessToken);
+
       if (accessToken) {
         authTokenManager.setAccessToken(accessToken);
       }
