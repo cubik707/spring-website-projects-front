@@ -22,12 +22,7 @@ export const fetchAuthMe = createAsyncThunk(
   'auth/getMe',
   async (token, { rejectWithValue }) => {
     try {
-      const { accessToken } = await authAPI.getMe(token);
-
-      if (accessToken) {
-        authTokenManager.setAccessToken(accessToken);
-      }
-
+      await authAPI.getMe(token);
       return true;
     } catch (error) {
       return rejectWithValue(error || 'Login failed');
