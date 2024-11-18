@@ -34,3 +34,20 @@ export const fetchAuthMe = createAsyncThunk(
     }
   },
 );
+
+export const signup = createAsyncThunk(
+  'auth/signup',
+  async (userData, { rejectWithValue }) => {
+    try {
+      const { data } = await authAPI.signup(userData);
+
+      if (data?.accessToken) {
+        authTokenManager.setAccessToken(data.accessToken);
+      }
+
+      return true;
+    } catch (error) {
+      return rejectWithValue(error || 'Signup failed');
+    }
+  },
+);

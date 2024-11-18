@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Input from '../../components/core/input/input';
 import styles from './login-page.module.css';
 import Button from '../../components/core/button/button';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { login } from '../../state/auth/auth-thunk';
 
 const LoginPage = () => {
@@ -13,23 +13,17 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await dispatch(login({ username, password }));
+      await dispatch(login({ username, password })).unwrap();
       setError(null);
+      navigate('/');
     } catch (error) {
       setError(error.message || 'Failed to login');
     }
   };
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate('/'); // Redirect to home if the user is authenticated
-    }
-  }, [isAuthenticated, navigate]);
 
   return (
     <div className={styles.loginWrapper}>

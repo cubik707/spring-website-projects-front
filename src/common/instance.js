@@ -14,28 +14,7 @@ instance.interceptors.response.use(
 
     // If it is a 401 error, try to update the token
     if (error.response?.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true; // To avoid infinite request loops
-      try {
-        // Send request to update token
-        const { data } = await axios.post(
-          `${process.env.REACT_APP_BASE_URL}/refresh-token`,
-          {},
-          { withCredentials: true }, // Send cookies
-        );
-
-        const { accessToken } = data;
-
-        authTokenManager.setAccessToken(accessToken);
-
-        // Update the headers for the original request
-        instance.defaults.headers['Authorization'] = `Bearer ${accessToken}`;
-        originalRequest.headers['Authorization'] = `Bearer ${accessToken}`;
-
-        return instance(originalRequest); // Resend the original request
-      } catch (refreshError) {
-        console.error('Failed to refresh token', refreshError);
-        return Promise.reject(refreshError); // Fail to update the token
-      }
+      await refreshAccessToken(originalRequest);
     }
 
     // Others error
@@ -43,5 +22,26 @@ instance.interceptors.response.use(
     return Promise.reject(errorMessage);
   },
 );
+
+export const refreshAccessToken = async (originalRequest) => {
+  try {
+    originalRequest._retry = true; // To avoid infinite request loops
+    // Send request to update token
+    const { data } = await instance.post('/refresh-token', {});
+
+    const { accessToken } = data;
+
+    authTokenManager.setAccessToken(accessToken);
+
+    // Update the headers for the original request
+    instance.defaults.headers['Authorization'] = `Bearer ${accessToken}`;
+    originalRequest.headers['Authorization'] = `Bearer ${accessToken}`;
+
+    return instance(originalRequest); // Resend the original request
+  } catch (refreshError) {
+    console.error('Failed to refresh token', refreshError);
+    return Promise.reject(refreshError); // Fail to update the token
+  }
+};
 
 export default instance;

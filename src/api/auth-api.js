@@ -18,4 +18,8 @@ export const authAPI = {
       throw e;
     }
   },
+  async signup(userData) {
+    const { data } = await instance.post('/signup', userData);
+    return data;
+  },
 };

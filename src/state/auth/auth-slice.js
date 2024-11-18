@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAuthMe, login } from './auth-thunk';
+import { fetchAuthMe, login, signup } from './auth-thunk';
 import { authTokenManager } from '../../utils/auth-token-manager';
 
 const authSlice = createSlice({
@@ -23,6 +23,9 @@ const authSlice = createSlice({
       })
       .addCase(fetchAuthMe.rejected, (state) => {
         state.isAuthenticated = false;
+      })
+      .addCase(signup.fulfilled, (state) => {
+        state.isAuthenticated = true;
       });
   },
 });
