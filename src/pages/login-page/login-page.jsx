@@ -24,7 +24,6 @@ const LoginPage = () => {
     }
   };
 
-
   return (
     <div className={styles.loginWrapper}>
       <div className={styles.loginCard}>

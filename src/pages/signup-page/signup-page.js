@@ -4,7 +4,7 @@ import Input from '../../components/core/input/input';
 import Button from '../../components/core/button/button';
 import { signup } from '../../state/auth/auth-thunk';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -55,7 +55,9 @@ const SignupPage = () => {
     }
 
     // If there's a general generalErrors message
-    return { message: backendErrors.message || 'An unexpected generalErrors occurred' };
+    return {
+      message: backendErrors.message || 'An unexpected generalErrors occurred',
+    };
   };
 
   return (

@@ -22,7 +22,6 @@ export const fetchAuthMe = createAsyncThunk(
   'auth/getMe',
   async (token, { rejectWithValue }) => {
     try {
-      
       const { accessToken } = await authAPI.getMe(token);
 
       if (accessToken) {

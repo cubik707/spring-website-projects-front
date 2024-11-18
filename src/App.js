@@ -10,7 +10,6 @@ function App() {
   useEffect(() => {
     const token = authTokenManager.getAccessToken();
     dispatch(fetchAuthMe(token));
-
   }, [dispatch]);
   return (
     <div>
