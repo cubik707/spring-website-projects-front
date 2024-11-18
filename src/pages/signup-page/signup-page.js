@@ -39,26 +39,12 @@ const SignupPage = () => {
     try {
       await dispatch(signup(formData)).unwrap();
       navigate('/');
-    } catch (err) {
-      const backendErrors = handleError(err); // Process errors from the backend
+    } catch (backendErrors) {
       setErrors(backendErrors.errors || {}); // If it's an object of errors, set them
       setGeneralErrors(backendErrors.message || null); // If it's a general generalErrors message, show it
     }
   };
 
-  const handleError = (e) => {
-    const backendErrors = e;
-
-    if (backendErrors.errors) {
-      // If it's an object with field-specific errors
-      return { errors: backendErrors.errors };
-    }
-
-    // If there's a general generalErrors message
-    return {
-      message: backendErrors.message || 'An unexpected generalErrors occurred',
-    };
-  };
 
   return (
     <div className={styles.signupWrapper}>
