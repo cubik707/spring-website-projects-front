@@ -18,7 +18,7 @@ instance.interceptors.response.use(
       try {
         // Send request to update token
         const { data } = await axios.post(
-          `${process.env.REACT_APP_BASE_URL}/refreshToken`,
+          `${process.env.REACT_APP_BASE_URL}/refresh-token`,
           {},
           { withCredentials: true }, // Send cookies
         );

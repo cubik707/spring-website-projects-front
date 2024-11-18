@@ -6,11 +6,28 @@ export const login = createAsyncThunk(
   'auth/login',
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await authAPI.login(userData);
-      const accessToken = response.accessToken;
+      const { accessToken } = await authAPI.login(userData);
+      console.log(accessToken);
       if (accessToken) {
         authTokenManager.setAccessToken(accessToken);
       }
+      return true;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || 'Login failed');
+    }
+  },
+);
+
+export const fetchAuthMe = createAsyncThunk(
+  'auth/getMe',
+  async (token, { rejectWithValue }) => {
+    try {
+      const { accessToken } = await authAPI.getMe(token);
+
+      if (accessToken) {
+        authTokenManager.setAccessToken(accessToken);
+      }
+
       return true;
     } catch (error) {
       return rejectWithValue(error.response?.data || 'Login failed');
