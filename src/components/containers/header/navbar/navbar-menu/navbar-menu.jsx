@@ -2,12 +2,19 @@ import styles from './navbar-menu.module.css';
 import NavbarMenuItem from '../navbar-menu-item/navbar-menu-item';
 import classNames from 'classnames';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../../../../state/auth/auth-slice';
 
 export default function NavbarMenu({ navbarMenuItems, isMobileOpen }) {
   const [isAnyDropdownOpen, setIsAnyDropdownOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const handleDropdownToggle = (isOpen) => {
     setIsAnyDropdownOpen(isOpen);
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
   };
 
   return (
@@ -27,6 +34,9 @@ export default function NavbarMenu({ navbarMenuItems, isMobileOpen }) {
               onDropdownToggle={handleDropdownToggle}
             />
           ))}
+          <span onClick={handleLogout} className={styles.logOut}>
+            Log out
+          </span>
         </ul>
       </nav>
     </div>

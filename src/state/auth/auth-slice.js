@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { login } from './auth-thunk';
+import { fetchAuthMe, login, signup } from './auth-thunk';
+import { authTokenManager } from '../../utils/auth-token-manager';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -9,12 +10,23 @@ const authSlice = createSlice({
   reducers: {
     logout: (state) => {
       state.isAuthenticated = false;
+      authTokenManager.removeAccessToken();
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(login.fulfilled, (state) => {
-      state.isAuthenticated = true;
-    });
+    builder
+      .addCase(login.fulfilled, (state) => {
+        state.isAuthenticated = true;
+      })
+      .addCase(fetchAuthMe.fulfilled, (state) => {
+        state.isAuthenticated = true;
+      })
+      .addCase(fetchAuthMe.rejected, (state) => {
+        state.isAuthenticated = false;
+      })
+      .addCase(signup.fulfilled, (state) => {
+        state.isAuthenticated = true;
+      });
   },
 });
 

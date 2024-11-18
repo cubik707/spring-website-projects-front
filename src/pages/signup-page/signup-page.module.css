@@ -1,0 +1,94 @@
+.signupWrapper{
+    height: 100vh;
+    background-color: #ebf2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.signupCard{
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #d9e9e9;
+    background-color: white;
+    border-radius: 5px;
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    font-family: Metropolis, sans-serif;
+    font-size: 3.5rem;
+    margin-top: 40px;
+    padding: 16px 0;
+}
+
+.signupForm{
+    width: 80%;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    grid-template-rows: repeat(3, auto);
+}
+
+.signupForm Input {
+    width: 100%;
+}
+
+.signupForm div:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.signupForm div:nth-child(2) {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.signupForm div:nth-child(3) {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.signupForm div:nth-child(4) {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.signupForm div:nth-child(5) {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.signupForm div:nth-child(6) {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.signupForm Button {
+    width: 50%;
+    grid-column: span 2;
+    justify-self: center;
+}
+
+.inputWrapper {
+    margin-bottom: 1rem;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .signupForm {
+        grid-template-columns: 1fr;
+    }
+}
