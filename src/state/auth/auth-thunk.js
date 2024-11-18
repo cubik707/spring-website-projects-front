@@ -13,7 +13,7 @@ export const login = createAsyncThunk(
       }
       return true;
     } catch (error) {
-      return rejectWithValue(error.response?.data || 'Login failed');
+      return rejectWithValue(error || 'Login failed');
     }
   },
 );
@@ -22,6 +22,7 @@ export const fetchAuthMe = createAsyncThunk(
   'auth/getMe',
   async (token, { rejectWithValue }) => {
     try {
+      
       const { accessToken } = await authAPI.getMe(token);
 
       if (accessToken) {
@@ -30,7 +31,7 @@ export const fetchAuthMe = createAsyncThunk(
 
       return true;
     } catch (error) {
-      return rejectWithValue(error.response?.data || 'Login failed');
+      return rejectWithValue(error || 'Login failed');
     }
   },
 );
