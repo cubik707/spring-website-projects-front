@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Input from '../../components/core/input/input';
 import styles from './login-page.module.css';
 import Button from '../../components/core/button/button';
@@ -49,6 +49,9 @@ const LoginPage = () => {
           />
           <Button type='submit'>Login</Button>
         </form>
+        <Link to='/signup' className={styles.linkToSignup}>
+          Don't have an account? Sign up
+        </Link>
       </div>
       {error && <div className='errorMessage'>{error}</div>}
     </div>

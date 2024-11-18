@@ -35,3 +35,14 @@
     flex-direction: column;
     gap: 2rem;
 }
+
+.linkToSignup{
+    margin-top: 20px;
+    color: #8c8c8c;
+    cursor: pointer;
+}
+
+.linkToSignup:hover{
+    color: #6cb52d;
+    text-decoration: underline;
+}
