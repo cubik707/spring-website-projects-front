@@ -35,3 +35,28 @@
     flex-direction: column;
     gap: 2rem;
 }
+
+.linkToSignup{
+    margin-top: 20px;
+    color: #8c8c8c;
+    cursor: pointer;
+}
+
+.linkToSignup:hover{
+    color: #6cb52d;
+    text-decoration: underline;
+}
+
+.inputWrapper {
+    margin-bottom: 1rem;
+}
+
+.inputWrapper > Input {
+    width: 100%;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}

@@ -1,6 +1,14 @@
 export const handleError = (e) => {
+  console.error(e);
+
+  // Check if there's a response object and data
   if (e.response && e.response.data) {
-    return e.response.data[0]?.msg || e.response.data.message;
+    const { data } = e.response;
+
+    // Return the error data directly as field-specific error messages
+    return data;
   }
-  return 'An unexpected error occurred';
+
+  // If no specific error data, return a general error message
+  return { general: 'An unexpected error occurred' };
 };
